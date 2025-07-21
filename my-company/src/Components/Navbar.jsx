@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
 import "./Navbar.css"
+//changed case from Components to components to match the file structure
 function Navbar() {
   return (
     <div>
