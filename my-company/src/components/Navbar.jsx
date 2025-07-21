@@ -6,7 +6,7 @@ import "./Navbar.css"
 function Navbar() {
   return (
     <div>
-          <nav>Navigation bar</nav>
+          <nav style={{ color: 'blue', fontSize: '16px' }}>Navigation bar</nav>
           <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
