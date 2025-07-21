@@ -1,0 +1,19 @@
+ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(108, 108, 108);
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+}
+ul li{
+    margin-right: 10px;
+}
+ul li:hover{
+    color: rgb(6, 70, 83);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
