@@ -1,16 +1,8 @@
-// store/useRecipeStore.js
+// src/components/recipeStore.js
 import { create } from "zustand";
 
 const useRecipeStore = create((set) => ({
-  recipes: [
-    {
-      id: 1,
-      title: "Spaghetti Carbonara",
-      description: "Classic Italian pasta dish",
-      ingredients: ["pasta", "eggs", "bacon", "cheese"],
-      instructions: "Cook pasta, mix with eggs and bacon, top with cheese",
-    },
-  ],
+  recipes: [],
 
   // Add a new recipe
   addRecipe: (newRecipe) =>
