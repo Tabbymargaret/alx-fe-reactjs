@@ -1,20 +1,20 @@
-import { useState } from 'react'
-import RecipeList from "./components/RecipeList.jsx"
-import AddRecipeForm from "./components/AddRecipeForm.jsx"
-import './App.css'
+// App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RecipeList from "./components/RecipeList";
+import RecipeDetails from "./components/RecipeDetails";
+import AddRecipeForm from "./components/AddRecipeForm";
+import "./App.css"; // Assuming you have some global styles
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <h1>Welcome to zustand</h1>
-        <AddRecipeForm/>
-        <RecipeList/>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RecipeList />} />
+        <Route path="/recipes/:id" element={<RecipeDetails />} />
+        <Route path="/add-recipe" element={<AddRecipeForm />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App
+export default App;
