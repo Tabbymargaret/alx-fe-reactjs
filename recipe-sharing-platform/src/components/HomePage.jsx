@@ -20,6 +20,7 @@ function HomePage() {
             />
             <h2 className="text-xl font-semibold mt-2">{recipe.title}</h2>
             <p className="text-gray-600 mt-1">{recipe.description}</p>
+            <p className="text-shadow-amber-100 text-0.5xl">{ recipe.summary }</p>
           </div>
         ))}
       </div>
