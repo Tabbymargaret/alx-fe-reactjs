@@ -329,22 +329,15 @@
 
 // export default RegistrationForm;
 
-
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./RegistrationForm.css";
 
 const validationSchema = Yup.object({
-  firstName: Yup.string()
+  username: Yup.string()
     .required("Required")
     .min(3, "Must be at least 3 characters")
     .max(15, "Must be 15 characters or less"),
-
-  lastName: Yup.string()
-    .required("Required")
-    .min(3, "Must be at least 3 characters")
-    .max(20, "Must be 20 characters or less"),
 
   email: Yup.string().required("Required").email("Invalid email address"),
 
@@ -358,99 +351,87 @@ const validationSchema = Yup.object({
 });
 
 const RegistrationForm = () => {
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   return (
-    <Formik
-      initialValues={{
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      }}
-      validationSchema={validationSchema}
-      onSubmit={(values) => {
-        alert(JSON.stringify(values, null, 2));
-      }}
-    >
-      <Form>
-        <div className="input-group">
-          <label htmlFor="firstName">First Name</label>
-          <Field
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="Enter your first name"
-          />
-          <ErrorMessage
-            name="firstName"
-            component="div"
-            className="error-message"
-          />
-        </div>
+    <form onSubmit={formik.handleSubmit}>
+      <div className="input-group">
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={formik.values.username}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          placeholder="Enter your username"
+        />
+        {formik.touched.username && formik.errors.username && (
+          <div className="error-message">{formik.errors.username}</div>
+        )}
+      </div>
 
-        <div className="input-group">
-          <label htmlFor="lastName">Last Name</label>
-          <Field
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="Enter your last name"
-          />
-          <ErrorMessage
-            name="lastName"
-            component="div"
-            className="error-message"
-          />
-        </div>
+      <div className="input-group">
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          placeholder="Enter your email"
+        />
+        {formik.touched.email && formik.errors.email && (
+          <div className="error-message">{formik.errors.email}</div>
+        )}
+      </div>
 
-        <div className="input-group">
-          <label htmlFor="email">Email</label>
-          <Field
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-          />
-          <ErrorMessage
-            name="email"
-            component="div"
-            className="error-message"
-          />
-        </div>
+      <div className="input-group">
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          placeholder="Enter your password"
+        />
+        {formik.touched.password && formik.errors.password && (
+          <div className="error-message">{formik.errors.password}</div>
+        )}
+      </div>
 
-        <div className="input-group">
-          <label htmlFor="password">Password</label>
-          <Field
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-          />
-          <ErrorMessage
-            name="password"
-            component="div"
-            className="error-message"
-          />
-        </div>
+      <div className="input-group">
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          value={formik.values.confirmPassword}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          placeholder="Confirm your password"
+        />
+        {formik.touched.confirmPassword && formik.errors.confirmPassword && (
+          <div className="error-message">{formik.errors.confirmPassword}</div>
+        )}
+      </div>
 
-        <div className="input-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <Field
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Confirm your password"
-          />
-          <ErrorMessage
-            name="confirmPassword"
-            component="div"
-            className="error-message"
-          />
-        </div>
-
-        <button type="submit">Submit</button>
-      </Form>
-    </Formik>
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 
