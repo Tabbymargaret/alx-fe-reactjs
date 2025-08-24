@@ -372,86 +372,84 @@ const RegistrationForm = () => {
         alert(JSON.stringify(values, null, 2));
       }}
     >
-      {() => (
-        <Form>
-          <div className="input-group">
-            <label htmlFor="firstName">First Name</label>
-            <Field
-              type="text"
-              id="firstName"
-              name="firstName"
-              placeholder="Enter your first name"
-            />
-            <ErrorMessage
-              name="firstName"
-              component="div"
-              className="error-message"
-            />
-          </div>
+      <Form>
+        <div className="input-group">
+          <label htmlFor="firstName">First Name</label>
+          <Field
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter your first name"
+          />
+          <ErrorMessage
+            name="firstName"
+            component="div"
+            className="error-message"
+          />
+        </div>
 
-          <div className="input-group">
-            <label htmlFor="lastName">Last Name</label>
-            <Field
-              type="text"
-              id="lastName"
-              name="lastName"
-              placeholder="Enter your last name"
-            />
-            <ErrorMessage
-              name="lastName"
-              component="div"
-              className="error-message"
-            />
-          </div>
+        <div className="input-group">
+          <label htmlFor="lastName">Last Name</label>
+          <Field
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter your last name"
+          />
+          <ErrorMessage
+            name="lastName"
+            component="div"
+            className="error-message"
+          />
+        </div>
 
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
-            <Field
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-            />
-            <ErrorMessage
-              name="email"
-              component="div"
-              className="error-message"
-            />
-          </div>
+        <div className="input-group">
+          <label htmlFor="email">Email</label>
+          <Field
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+          <ErrorMessage
+            name="email"
+            component="div"
+            className="error-message"
+          />
+        </div>
 
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
-            <Field
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-            />
-            <ErrorMessage
-              name="password"
-              component="div"
-              className="error-message"
-            />
-          </div>
+        <div className="input-group">
+          <label htmlFor="password">Password</label>
+          <Field
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <ErrorMessage
+            name="password"
+            component="div"
+            className="error-message"
+          />
+        </div>
 
-          <div className="input-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <Field
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirm your password"
-            />
-            <ErrorMessage
-              name="confirmPassword"
-              component="div"
-              className="error-message"
-            />
-          </div>
+        <div className="input-group">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <Field
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+          />
+          <ErrorMessage
+            name="confirmPassword"
+            component="div"
+            className="error-message"
+          />
+        </div>
 
-          <button type="submit">Submit</button>
-        </Form>
-      )}
+        <button type="submit">Submit</button>
+      </Form>
     </Formik>
   );
 };
