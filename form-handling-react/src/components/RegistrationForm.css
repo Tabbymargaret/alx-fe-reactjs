@@ -1,0 +1,39 @@
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: aliceblue;
+    color: black;
+    padding: 40px;
+    border-radius: 10px;
+}
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #9fe96e;
+  color: black;
+}
+.input-group input:focus {
+  outline: none;
+  border: 2px solid #646cff;
+}
+.error-message {
+  display: none;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
