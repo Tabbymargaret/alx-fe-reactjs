@@ -372,7 +372,7 @@ const RegistrationForm = () => {
           type="text"
           id="username"
           name="username"
-          value={formik.values.username}
+          value={username}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder="Enter your username"
@@ -388,7 +388,7 @@ const RegistrationForm = () => {
           type="email"
           id="email"
           name="email"
-          value={formik.values.email}
+          value={email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder="Enter your email"
@@ -404,7 +404,7 @@ const RegistrationForm = () => {
           type="password"
           id="password"
           name="password"
-          value={formik.values.password}
+          value={password}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder="Enter your password"
